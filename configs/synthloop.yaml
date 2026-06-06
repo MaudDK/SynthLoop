@@ -34,8 +34,9 @@ wandb:
   run_name: "placeholder"
 
 data:
-  dataset: "name"
+  dataset_name: "placeholder"
   test_size: 0.2
   shuffle: true
   seed: 42
-
+  cache_dir: "data/cache"
+  processed_dir: "data/processed"
