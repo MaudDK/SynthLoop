@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+
+
+[project]
+name = "SynthLoop"
+version = "0.1.0"
+description = "Placeholder"
+requires-python = ">=3.10"
+dependencies = [
+    "pyyaml",
+    "python-dotenv",
+    "datasets",
+    "transformers",
+    "torch>=2.0.0",
+    "torchvision",
+    "accelerate>=1.1.0",
+    "bitsandbytes>=0.46.1",
+    "peft",
+    "trl",
+    "wandb",
+    "tqdm",
+    "scikit-learn",
+    "huggingface-hub",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

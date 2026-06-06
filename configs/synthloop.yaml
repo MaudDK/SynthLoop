@@ -1,0 +1,41 @@
+model:
+  base_model: "placeholder"
+  output_dir: "outputs/"
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+
+quantization:
+  quantize: true
+  bits: 4
+  compute_dtype: "bfloat16"
+  quant_type: "nf4"
+  double_quant: true
+
+training:
+  epochs: 10
+  batch_size: 4
+  gradient_accumulation: 4
+  learning_rate: 0.001
+  bf16: true
+
+wandb:
+  project: "synthloop"
+  run_name: "placeholder"
+
+data:
+  dataset: "name"
+  test_size: 0.2
+  shuffle: true
+  seed: 42
+
