@@ -11,9 +11,15 @@ class BaseDataset:
     
     def load(self):
         authenticate_hf()
+        size = self.config['data'].get('size', None)
+        split = self.config['data'].get('split', 'train')
+        
+        if size:
+            split = f"{split}[:{size}]"
+            
         self.dataset = load_dataset(
             self.hf_path,
-            split=self.config['data'].get('split', 'train'),
+            split=split,
             cache_dir=self.cache_dir
         )
 
