@@ -24,6 +24,14 @@ dependencies = [
     "tqdm",
     "scikit-learn",
     "huggingface-hub",
+    "unsloth",
+    "langchain",
+    "langchain-huggingface",
+    "langchain_community",#Deprecated remove after
+    "sentence_transformers",
+    "faiss-cpu",
+    "spacy",
+    "rank_bm25"
 ]
 
 [tool.setuptools.packages.find]

@@ -1,5 +1,5 @@
 model:
-  base_model: "placeholder"
+  base_model: "Qwen/Qwen2.5-7B-Instruct"
   output_dir: "outputs/"
 
 lora:
@@ -23,18 +23,20 @@ quantization:
   double_quant: true
 
 training:
-  epochs: 10
+  epochs: 3
   batch_size: 4
   gradient_accumulation: 4
-  learning_rate: 0.001
+  learning_rate: 0.0001
   bf16: true
+  max_length: 512
 
 wandb:
   project: "synthloop"
-  run_name: "placeholder"
+  run_name: ""
 
 data:
-  dataset_name: "placeholder"
+  dataset: ""
+  split: "train"
   test_size: 0.2
   shuffle: true
   seed: 42
